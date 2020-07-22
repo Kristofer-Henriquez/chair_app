@@ -1,0 +1,9 @@
+<p> This is my index action </p>
+
+<% @chairs.each do |chair| %>
+  <p> color: <%= chair.color %> </p>
+  <p> weight: <%= chair.weight %> </p>
+  <p> legs: <%= chair.legs %> </p>
+  <p> image: <%= chair.image %> </p>
+  <br>
+<% end %>
