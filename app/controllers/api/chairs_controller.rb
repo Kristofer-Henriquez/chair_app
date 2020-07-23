@@ -10,4 +10,19 @@ class Api::ChairsController < ApplicationController
     render "show.html.erb"
   end
 
+  def new
+    render "new.html.erb"
+  end
+
+  def create
+    @chair = Chair.new(
+      color: params[:color],
+      weight: params[:weight],
+      legs: params[:legs],
+      image: params[:image]
+    )
+
+    @chair.save
+    redirect_to "/chairs/#{@chair.id}"
+  end
 end
